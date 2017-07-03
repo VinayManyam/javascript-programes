@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+//delete operator
+//the delete opperator is used to remove any prorperty of an objectit returns undefined type if the programe is trying to accesskey
+//the deleted property.u cant delelte property of built in object like map ,date,stringetc
+var f={name:'name',id:20,price:2000};
+delete f.id;
+document.write(f.name+"<br>"+f.id+"<br>"+f.price);
+if(f.id==undefined)
+{
+document.write("<br>id is removed");
+alert("hi here i am");
+}
+
+//in: it is used to check for any property for an object and returns to if the property found
+var p=["tv","mobile","nick"];
+var q={id:1,name:'tv',price:2000,dat:new Date("10 june 2017")};
+var res=0 in p;
+var test="dat" in q;
+document.write("<br><font color=\"green\">IN function<br></font>chking 0 index status :"+res);
+document.write("<br>date :"+test);
+
+
+//using anchor as activity
+//term void refferes to define any element without a return type 
+function call(){
+document.write("this msg is called by acnhor");
+}
+
+
+</script>
+</head>
+<body>
+<br>
+<a href="javascript:call();">call javascript function</a><br	>
+<a href="javascript:void();">void javascript function</a><br>
+</body>
+</html>
