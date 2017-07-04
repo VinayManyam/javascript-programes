@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function load()
+{
+var k1=document.getElementById("k1").value;
+document.getElementById("p1").innerHTML=k1;
+}
+function load1()
+{
+var k2=document.getElementById("k2").value;
+
+var pat1=/^[a-z]{4,15}$/;
+if(k2.match(pat1))
+	{
+	document.getElementById("p2").innerHTML=k2;
+	}
+else{
+	document.getElementById("e2").innerHTML=k2+" is not valid";
+	}
+}
+
+
+
+function load3()
+{
+var k3=document.getElementById("k3").value;
+
+var pat3=/^[a-zA-Z]{4,15}$/;
+if(k3.match(pat3))
+	{
+	document.getElementById("p3").innerHTML=k3;
+	}
+else{
+	document.getElementById("e3").innerHTML=k3+" is not valid";
+	}
+}
+
+function load4()
+{
+var k4=document.getElementById("k4").value;
+
+var pat4=/^[0-9]{4,15}$/;
+if(k4.match(pat4))
+	{
+	document.getElementById("p4").innerHTML=k4;
+	}
+else{
+	document.getElementById("e4").innerHTML=k4+" is not valid";
+	}
+}
+
+function load5()
+{
+var k5=document.getElementById("k5").value;
+
+var pat5=/^[a-zA-Z0-9]{4,15}$/;
+if(k5.match(pat5))
+	{
+	document.getElementById("p5").innerHTML=k5;
+	}
+else{
+	document.getElementById("e5").innerHTML=k5+" is not valid";
+	}
+}
+
+function load6()
+{
+var k6=document.getElementById("k6").value;
+
+var pat6=/^[a-zA-Z0-9!@#$%^&*_+?><.,\/]{4,15}$/;
+if(k6.match(pat6))
+	{
+	document.getElementById("p6").innerHTML=k6;
+	}
+else{
+	document.getElementById("e6").innerHTML=k6+" is not valid";
+	}
+}
+
+function load7()
+{
+var k7=document.getElementById("k7").value;
+
+var pat7=/^(?=.*[A-Z])[a-zA-Z]{4,15}$/;
+if(k7.match(pat7))
+	{
+	document.getElementById("p7").innerHTML=k7;
+	}
+else{
+	document.getElementById("e7").innerHTML=k7+" is not valid";
+	}
+}
+
+function load8()
+{
+var k8=document.getElementById("k8").value;
+
+var pat8=/^(?=.*[A-Z0-9])[a-zA-Z0-9]{4,15}$/;
+if(k8.match(pat8))
+	{
+	document.getElementById("p8").innerHTML=k8;
+	}
+else{
+	document.getElementById("e8").innerHTML=k8+" is not valid";
+	}
+}
+
+
+function load9()
+{
+var k9=document.getElementById("k9").value;
+
+var pat9=/^(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]{4,15}$/;
+if(k9.match(pat9))
+	{
+	document.getElementById("p9").innerHTML=k9;
+	}
+else{
+	document.getElementById("e9").innerHTML=k9+" is not valid";
+	}
+}
+
+function load10()
+{
+var k10=document.getElementById("k10").value;
+//remove unwanted special chars
+var pat10=/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_+?><.,\/])[a-zA-Z0-9!@#$%^&*_+?><.,\/]{4,15}$/;
+if(k10.match(pat10))
+	{
+	document.getElementById("p10").innerHTML=k10;
+	}
+else{
+	document.getElementById("e10").innerHTML=k10+" is not valid";
+	}
+}
+
+function load11()
+{
+var k11=document.getElementById("k11").value;
+//remove unwanted special chars
+var pat11=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(k11.match(pat11))
+	{
+	document.getElementById("p11").innerHTML=k11;
+	}
+else{
+	document.getElementById("e11").innerHTML=k11+" is not valid";
+	}
+}
+
+</script>
+</head>
+<body>
+<table>
+<tr>
+<td>
+<div align="center" id="p1"> 
+Enter keyword <input type="text" id="k1" placeholder="any keyword"><input type="button" onclick="load()" value="verify"><br><br>
+</div>
+<div align="center" id="p2"> 
+Enter keyword <input type="text" id="k2" placeholder="a-z upto 4-15"><input type="button" onclick="load1()" value="verify">&nbsp <span id="e2"></span><br><br>
+</div>
+
+</div>
+<div align="center" id="p3"> 
+Enter keyword <input type="text" id="k3" placeholder="a-Z upto 4-15"><input type="button" onclick="load3()" value="verify">&nbsp <span id="e3"></span><br><br>
+</div>
+
+</div>
+<div align="center" id="p4"> 
+Enter keyword <input type="text" id="k4" placeholder="0-9 upto 4-15"><input type="button" onclick="load4()" value="verify">&nbsp <span id="e4"></span><br><br>
+</div>
+
+</div>
+<div align="center" id="p5"> 
+Enter keyword <input type="text" id="k5" placeholder="a-z&0-9 upto 4-15"><input type="button" onclick="load5()" value="verify">&nbsp <span id="e5"></span><br><br>
+</div>
+
+
+</div>
+<div align="center" id="p6"> 
+Enter keyword <input type="text" id="k6" placeholder="all char upto 4-15"><input type="button" onclick="load6()" value="verify">&nbsp <span id="e6"></span><br><br>
+</div>
+
+</td>
+<td>
+</div>
+<div align="center" id="p7"> 
+Enter keyword(atleast one Uppercase) <input type="text" id="k7" placeholder="a-Z upto 4-15"><input type="button" onclick="load7()" value="verify">&nbsp <span id="e7"></span><br><br>
+</div>
+
+<div align="center" id="p8"> 
+key(atleast one Uppercase or no) <input type="text" id="k8" placeholder="a-Z&0-9 upto 4-15"><input type="button" onclick="load8()" value="verify">&nbsp <span id="e8"></span><br><br>
+</div>
+
+<div align="center" id="p9"> 
+key(atleast one Uppercase and no) <input type="text" id="k9" placeholder="a-Z&0-9 upto 4-15"><input type="button" onclick="load9()" value="verify">&nbsp <span id="e9"></span><br><br>
+</div>
+
+<div align="center" id="p10"> 
+key(spacial case(A9@)) <input type="text" id="k10" placeholder="special upto 4-15"><input type="button" onclick="load10()" value="verify">&nbsp <span id="e10"></span><br><br>
+</div>
+
+<div align="center" id="p11"> 
+email <input type="text" id="k11" placeholder="valid Email"><input type="button" onclick="load11()" value="verify">&nbsp <span id="e11"></span><br><br>
+</div>
+</td>
+</tr>
+
+</table>
+
+     <!-- (/^
+        (?=.*\d)                //should contain at least one digit
+        (?=.*[a-z])             //should contain at least one lower case
+        (?=.*[A-Z])             //should contain at least one upper case
+        [a-zA-Z0-9]{8,}         //should contain at least 8 from the mentioned characters
+		
+		email-  /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+		/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+		
+		
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		
+		
+-->
+
+</body>
+</html>
