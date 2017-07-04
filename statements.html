@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function load(){
+var n1=parseInt(document.getElementById("n1").value);
+var n2=parseInt(document.getElementById("n2").value);
+var sum=n1+n2;
+var mul=n1*n2;
+document.getElementById("sum").innerHTML="sum="+sum;
+document.getElementById("mul").innerHTML="mul="+mul;
+
+}
+function pin(){
+var pin=document.getElementById("pin").value;
+if(pin==1234)
+document.getElementById("er").innerHTML="success fully loged with password";
+else if(pin==4321)
+document.getElementById("er").innerHTML="success fully loged with phone";
+else
+document.getElementById("er").innerHTML="wrong pin ! please try again";
+}
+</script>
+</head>
+<body>
+<div align="center"><br>
+<input type="text" id="n1" placeholder="enter n1">
+<input type="text" id="n2" placeholder="enter n2">
+<input type="button" onclick="load()" value="test">&nbsp <span id="sum"></span><span id="mul"></span>
+
+</div><br>
+<div align="center">
+Enter Your Pin<input type="text" id="pin">
+<input type="button" onclick="pin()" value="start">
+<span id="er"></span>
+</div>
+<!--Statements 
+programe instraction that controls the application flow and performs specific operations
+1.selecttion statements ->if,else,switch,case
+2.Iteration statements ->for,while,do while
+3.jump statements-> break,continue,return
+4.Exception Handling statements->try ,catch,finally,throw
+
+
+if -block
+else -clause(alternative statements)
+
+selection statements are desition making statements controls programe exicution 
+
+==>if 
+1.forword jump
+ if(boolen jump)
+ statement1;
+ statement2;//not belongs to if condtion
+ 
+2.simple forword jump with block representation
+
+if(boolen expresstion)
+{
+statement1;
+statement2;
+}
+
+3.simple if
+
+if(boolen expression){
+statements;
+statements2;
+}else{
+statemnets3;
+statemnets4;
+}
+
+4.else if
+if(expresstion)
+{
+statement1;
+}
+else if(express0ion){
+statements2;
+}
+else{
+statements;
+}
+
+
+
+
+-->
+
+
+</body>
+</html>
