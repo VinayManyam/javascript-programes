@@ -21,9 +21,148 @@ document.getElementById("er").innerHTML="success fully loged with phone";
 else
 document.getElementById("er").innerHTML="wrong pin ! please try again";
 }
+
+
+
+
+
+function pay()
+{
+var pin=document.getElementById("pin2").value;
+var date=document.getElementById("date").value;
+var csv=document.getElementById("csv").value;
+var msg=document.getElementById("status");
+
+if(pin=="1234")
+{
+	if(date=='2018')
+	{
+	if(csv=='1234')
+	{
+	msg.innerHTML="payment successfull";
+	}else{
+	msg.innerHTML="csv is wrong";
+	}
+	}else{
+	msg.innerHTML="exp date is wrong";
+	}
+}
+
+else{
+msg.innerHTML="wrong pin";
+}
+}
+
+
+function order(){
+
+name=document.getElementById("uname").value;
+item1=document.getElementById("item1");
+item2=document.getElementById("item2");
+item3=document.getElementById("item3");
+item4=document.getElementById("item4");
+price=0;
+
+if(item1.checked)
+	{
+	price=100;
+	mname='item1';
+	
+	}
+
+	if(item2.checked)
+	{
+	price=150;
+	mname='item2';
+	}
+	if(item3.checked)
+	{
+	price=price+200;
+ 	}
+	if(item4.checked)
+	{
+	price=price+300;
+	}
+
+document.getElementById("result1").innerHTML="Hi "+name+"<br>"+"Please pay total Amount :"+price;
+}
+
+function call2(){
+
+var rates = document.getElementById('rates').value;
+var rate_value;
+if(rates =='Fixed Rate'){
+    rate_value = document.getElementById('r1').value;
+
+}else if(rates =='Variable Rate'){
+    rate_value = document.getElementById('r2').value;
+
+}else if(rates =='Multi Rate'){
+    rate_value = document.getElementById('r3').value;
+}  
+
+document.getElementById('res').innerHTML = rate_value;
+}
+
+
+function js(){
+var form = document.getElementById("test2");
+alert(form.elements["test2"].value);
+}
 </script>
 </head>
 <body>
+
+<form id="test">
+<label><input type="radio" id="test2" name="test2" value="A"> A</label>
+<label><input type="radio" id="test2" name="test2" value="B" checked> B</label>
+<label><input type="radio" id="test2" name="test2" value="C"> C</label>
+<input type="button" onclick="js()" value="click">
+</form>
+
+
+
+
+
+
+
+
+
+
+<div id="rates">
+  <input type="radio" id="r1" name="rate" value="Fixed Rate"> Fixed Rate
+  <input type="radio" id="r2" name="rate" value="Variable Rate"> Variable Rate
+  <input type="radio" id="r3" name="rate" value="Multi Rate" checked="checked"> Multi Rate  
+  <input type="button" value="name" onclick="call2()">
+</div>
+<p id="res"></p>
+
+<hr></hr>
+<form>
+<div align="center">
+<table border="1">
+<tr><td>Name :</td><td><input type="text" id="uname" name="uname"></td></tr>
+<tr><td colspan="2">select your favirate food item</td></tr>
+<tr><td>food item 1(&#8377;100/-)<input type="radio" value="item1" id="item1" name="item1" ></td><td>food item 2(&#8377;150/-)<input type="radio" value="item2" id="item2" name="item1"></td></tr>
+<tr><td colspan="2">select ad-on</td></tr>
+<tr><td><input type="checkbox" id="item3" value="Krusher" >Krushere (&#8377;200/-) </td><td><input type="checkbox" id="item4" value="fries" >fries(&#8377;300/-) </td></tr>
+<tr><td colspan="2" align="center" ><input type="button" value="order" onclick="order()"></td></tr>
+<tr><td colspan="2" align="center" id="result1"></td></tr>
+
+</table>
+</form>
+<div id="st">
+</div>
+
+
+
+
+
+
+
+
+
+<hr></hr>
 <div align="center"><br>
 <input type="text" id="n1" placeholder="enter n1">
 <input type="text" id="n2" placeholder="enter n2">
@@ -35,6 +174,26 @@ Enter Your Pin<input type="text" id="pin">
 <input type="button" onclick="pin()" value="start">
 <span id="er"></span>
 </div>
+<hr></hr>
+<div align="center">
+<form>
+<table>
+<caption>Payment gatway</caption>
+<tr><td>Enter pin :</td><td><input type="text" id="pin2" placeholder="enter pin"></td></tr>
+<tr><td>Exp.Date:</td><td><select id="date">
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+</select></td></tr>
+<tr><td>csv:</td><td><input type="text" id="csv" placeholder="enter pin"></td></tr>
+<tr><td colspan="2"><div id="status" align="center"></div></td></tr>
+<tr align="center"><td colspan="2"><input type="button" value="pay now" onclick="pay()"></td></tr>
+</table>
+
+</form>
+</div>
+
+
 <!--Statements 
 programe instraction that controls the application flow and performs specific operations
 1.selecttion statements ->if,else,switch,case
@@ -83,6 +242,61 @@ statements2;
 else{
 statements;
 }
+
+
+multilelev lader if
+
+
+kfc simple online order form
+
+
+function orderclick()
+{
+uname=document.getElementById("txtName").value;
+burger=document.getElementById("optBurger").value;
+roller=document.getElementById("optroller").value;
+krusher=document.getElementById("optkruser").value;
+fries=document.getElementById("optfries");
+summary=document.getElementById("optBurger");
+
+if(burger.checked)
+{
+mealcost=120;
+mealname=burger.value;
+}
+if(roller.checked)
+{
+mealcost=100;
+mealname=roller.value;
+}
+if(krusher.chaked)
+{
+acost=40;
+mealcost=mealcost+acost;
+}
+if(fries.checked)
+{
+acost=60;
+mealcost=mealcost+acost;
+}
+summary.innerHTML="hellow!"+uname+"<br>"+"bill :"+"&#8377"+mealcost;
+
+<form>
+<font size="5" color="white">
+<table align="center border="1" bgcolor="marron">
+<caption><caption>
+<tr> <td colspan="2" align="center"> cusmer info</td></tr>
+<tr> <td> name</td><td> <input type="ntext" id="uname"></td></tr>
+
+<tr> <td colspan="2" align="center"> select meal</td></tr>
+<tr> <td> <input type"radio" id="optburger" name="meal" value="OMG burger">OMG burger(&#8377)</td><td><input type"radio" id="optroller" name="meal" value="OMG roller">OMG rolle(&#8377)</td></tr>
+
+</table>
+
+</form>
+
+}
+
 
 
 

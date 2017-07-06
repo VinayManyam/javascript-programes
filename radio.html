@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+
+function myFunction() {
+    var x = document.getElementById("myRadio").value;
+    document.getElementById("demo").innerHTML = x;
+}
+
+function call(){
+	var y = document.getElementById("r1").value;
+	document.getElementById("d1").innerHTML = y;
+	
+	}
+	function call2()
+	{
+	var y = document.getElementById("r2").value;
+	document.getElementById("d1").innerHTML = y;
+	}
+	
+	function r2(){
+	 var x = document.getElementById("r3");
+	 if(x.checked)
+    document.getElementById("d4").innerHTML = "hellow";
+	}
+	
+	function order(){
+
+name=document.getElementById("uname").value;
+it=document.getElementById("i1");
+item2=document.getElementById("i2");
+item3=document.getElementById("item3");
+item4=document.getElementById("item4");
+price=0;
+
+if(it.checked)
+	{
+	price=100;
+	mname='item1';
+	
+	}
+	if(item2.checked)
+	{
+	price=150;
+	mname='item2';
+	}
+	if(item3.checked)
+	{
+	price=price+200;
+	
+	}
+	if(item4.checked)
+	{
+	price=price+300;
+	}
+
+document.getElementById("result1").innerHTML="Hi"+name+"<br>"+"Please pay total Amount :"+price;
+}
+	
+</script>
+</head>
+<body>
+
+
+
+
+<form>
+<div align="center">
+<table border="1">
+<tr><td>Name :</td><td><input type="text" id="uname" name="uname"></td></tr>
+<tr><td colspan="2">select your favirate food item</td></tr>
+<tr><td>food item 1(&#8377;100/-)<input type="radio"  id="i1" name="item1" ></td><td>food item 2(&#8377;150/-)<input type="radio" id="i2" name="item1"></td></tr>
+<tr><td colspan="2">select ad-on</td></tr>
+<tr><td><input type="checkbox" id="item3" value="Krusher" >Krushere (&#8377;200/-) </td><td><input type="checkbox" id="item4" value="fries" >fries(&#8377;300/-) </td></tr>
+<tr><td colspan="2" align="center" ><input type="button" value="order" onclick="order()"></td></tr>
+<tr><td colspan="2" align="center" id="result1"></td></tr>
+
+</table>
+</form>
+
+
+
+Radio button:<input type="radio" id="r3">
+
+<button onclick="r2()">Try it</button>
+
+<p id="d4"></p>
+
+
+
+
+
+
+
+<input type="radio" name="colors" value="red" id="myRadio">Red color
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<input type="radio" name="n" value="red" id="r1" onclick="call()">red
+<input type="radio" name="n" value="green" id="r2" onclick="call2()">green
+<p id="d1"></p>
+</body>
+</html>
