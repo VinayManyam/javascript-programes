@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function selectproduct()
+{
+unhide=document.getElementById("details");
+unhide.style.display="block";
+products=[
+{ProductId:1,ProductName:"TV",ProducPrice:2000,Photo:"1.png"},
+{ProductId:2,ProductName:"shoe",ProducPrice:1000,Photo:"2.png"}
+];
+product=document.getElementById("1stproduct");
+pic=document.getElementById("pic");
+prodid=document.getElementById("proid");
+prodname=document.getElementById("pordname");
+prodprice=document.getElementById("prodprice");
+
+
+switch(product.value)
+{
+case "tv":
+pic.src=products[0].Photo;
+prodid.innerHTML=products[0].ProductId;
+prodname.innerHTML=products[0].ProductName;
+prodprice.innerHTML=products[0].ProducPrice;
+break;
+
+case "shoe":
+pic.src=products[1].Photo;
+prodid.innerHTML=products[1].ProductId;
+prodname.innerHTML=products[1].ProductName;
+prodprice.innerHTML=products[1].ProducPrice;
+break;
+
+default:
+alert("please select a product");
+unhide.style.display="none";
+break;
+
+
+
+}
+
+}
+</script>
+</head>
+<body>
+
+<form>
+<div align="center">
+<select id="1stproduct" onchange="selectproduct()">
+<option value="-1">select product</option>
+<option value="tv">samsung TV</option>
+<option value="shoe">nike shoe</option>
+</select>
+
+
+</div>
+
+</form>
+
+<br><br>
+
+<div id="details" align="center" style="display:none">
+
+<table border="1">
+<tr><td><img id="pic" width="300" height="300"></td>
+<td align="center" width="200">
+<table>
+<tr><td>Name:</td><td id="pordname"></td></tr>
+<tr><td>Id:</td><td id="proid"></td></tr>
+<tr><td>Price:</td><td id="prodprice"></td></tr>
+</table>
+</td>
+
+
+
+
+
+
+</tr>
+
+
+
+</table>
+</div>
+
+
+
+<!--
+switch:
+1.it is a desition making statement that exicutes a block of code which matches the given condition un like the of stetemnet it will not traslate or compile 
+every logic that doesnt matches the condtion.
+the block of code to exicute is defined with a case startement and default containes statements to exicute when the switch value is not matching with 
+any one of the case 
+
+   exprestion
+      |
+	case 2->code 1  ---- |
+	  |					 |
+	case 2->code 2  ---- |
+	 |					 |
+	case 3->code 3 ----	 |
+	 |					 |
+	case 4->code 4 ----	 |
+	 |					 |
+	 |->defult-> code n-------exit
+	 
+	 switch(exprestion)
+	 {
+	 case content-excpression
+			statement;
+			break;
+			
+			defult:
+			statements;
+			break;
+			
+	 }
+	 
+	 
+	 
+-->
+
+
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+function register(){
+name=document.getElementById("name").value;
+if(name=='')alert('please enate your name');else{
+date=document.getElementById("idate").value;
+if(date=='')alert('please enter date');else{
+adv=parseInt(document.getElementById("amount").value);
+if(!isNaN(adv) && adv>=500)
+{
+
+date=document.getElementById("idate").value;
+ndate=document.getElementById("ndate").value;
+room1=document.getElementById("room1");
+room2=document.getElementById("room2");
+an1=document.getElementById("an1");
+an2=document.getElementById("an2");
+
+ar=[];
+bill=0;
+if(room1.checked) {bill=2000;room=room1.value;}
+if(room2.checked){ bill=4000;room=room2.value;}
+if(an1.checked) {bill= bill+200;ar[0]=an1.value;}
+if(an2.checked) {bill= bill+500;ar[1]=an2.value;}
+bill=bill*ndate;
+if(bill>0)bill=bill-adv;
+document.getElementById("status").style.display="block";
+document.getElementById("form").style.display="none";
+document.getElementById("uname").innerHTML=name;
+document.getElementById("udate").innerHTML=date;	
+document.getElementById("uroom").innerHTML=room;
+document.getElementById("udays").innerHTML=ndate;
+document.getElementById("uamin").innerHTML=ar.join(" ");
+document.getElementById("uadv").innerHTML=adv;	
+document.getElementById("ubal").innerHTML=bill;	
+
+}
+else{
+alert("please pay minimum advance 500/-");
+}
+}
+}
+
+}
+</script>
+</head>
+<body>
+
+<div align="center">
+
+<form>
+<table border="1" align="center" id="form">
+<caption><font color="green"><h2>Hotel Registration</h2></font></caption>
+<tr align="center"><td colspan="2">Custmer information</td></tr>
+<tr><td>Name</td><td><input type="text" id="name" placeholder="Enter Name" required></td></tr>
+<tr><td>Chek in date</td><td><input type="date" id="idate" required></td></tr>
+<tr><td>No days</td><td><input type="number" id="ndate" value="1"  pattern="[0-9]" min="1"></td></tr>
+<tr align="center"><td colspan="2">Room type</td></tr>
+<tr><td align="center"><img src="1.png"><br>
+<input type="radio" name="room" id="room1" value="deluxe room">Duplex room &#8377 2000/- per Day</td>
+<td align="center"><img src="2.png"><br><input type="radio" name="room" id="room2" value="suite room">Suite room &#8377 4000/- per Day </td></tr>
+<tr align="center"><td colspan="2">Aminities</td></tr>
+<tr><td align="center"><img src="3.png"><br><input type="checkbox"  id="an1" value="locker">Locker &#8377 200/- per day</td>
+<td align="center"><img src="4.png"><br><input type="checkbox"  id="an2" value="A/c">A/C &#8377  500/- per day </td></tr>
+
+<tr><td>Advance</td><td><input type="text" id="amount" value="500" required></td></tr>
+<tr align="center"><td colspan="2"><input type="button" value="Register" onclick="register()"></td></tr>
+<table>
+
+</form>
+
+</div>
+
+<div align="center"> 
+<table style="display:none" id="status" align="center" border="1" width="200" >
+<caption><font color="green">Payment Information</font></caption>
+<tr><td align="left">Name</td><td align="left" id="uname" align="left"></td></tr>
+<tr><td align="left">Chek in Date</td><td id="udate" align="left"></td></tr>
+<tr><td align="left">Room</td><td id="uroom"align="left"></td></tr>
+<tr><td align="left">No of days</td><td id="udays" align="left"></td></tr>
+<tr><td align="left">Aminities</td><td id="uamin" align="left"></td></tr>
+<tr><td align="left">Advance</td><td id="uadv"align="left" ></td></tr>
+<tr><td align="left">Balane payment</td><td id="ubal"align="left"></td></tr>
+</table>
+</div>
+</body>
+</html>
