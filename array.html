@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+
+function load(){
+var n=document.getElementById("str").value;
+var x=document.getElementById("dis");
+var y=document.getElementById("dis1");
+var a=document.getElementById("dis2");
+var b=document.getElementById("dis3");
+var c=document.getElementById("dis4");
+
+
+var arr=['hyd','ban','mom'];
+var arr1=['h','b','m'];
+
+//var con=new array();
+//alert(con);arr
+//con[]=n;
+//y.innerHTML=con.join()+"<br>";
+
+x.innerHTML=arr.join()+"<br> tostring:"+arr1.toString();
+a.innerHTML="<br>Sort function"+arr1.sort(); //sorting array elements
+b.innerHTML="<br> revers:"+arr1.reverse();
+arr1.push(n); 
+c.innerHTML="<br> push:"+arr1.join();
+arr1.pop();
+document.getElementById("dis5").innerHTML="<br> pop :"+arr1.join();
+arr1.shift();
+document.getElementById("dis6").innerHTML="<br> shift :"+arr1.join();
+arr1.unshift(n);
+document.getElementById("dis7").innerHTML="<br> unshift:"+arr1.join();
+document.getElementById("dis8").innerHTML="<br> length:"+arr1.length;
+document.getElementById("dis9").innerHTML="<br> indexof h:"+arr1.indexOf('h');//search for element in array
+var com=arr.concat(arr1);
+document.getElementById("di").innerHTML="<br> concationation:"+com;
+
+
+
+}
+</script>
+</head>
+<body>
+<div align="center">
+<font color="green" size="6">Array manipulation in JS </font></br>
+<input type="text" id="str">
+<input type="button" value="send" onclick="load()"><br>
+<br>
+<span id="dis"></span>
+<span id="dis1"></span>
+<span id="dis2"></span>
+
+<span id="dis3"></span>
+<span id="dis4"></span>
+<span id="dis5"></span>
+<span id="dis6"></span>
+<span id="dis7"></span>
+<span id="dis8"></span>
+<span id="dis9"></span>
+<span id="di"></span>
+
+
+</div>
+ <!-- 
+ 
+ 
+ array objrct:
+ 
+ array features
+ -reduce overhead by stroing values in sequntial order
+ -complexity reduced
+  -collection in js;
+ -various types of elemets
+ -to maipulate
+ -add or remove elements dynamically
+ - 
+ 
+ var n=[0,'vinay',true]; //n[0];
+ var a=new array();
+ 
+ 
+ 1enth  -> total count of elements i array;
+ concat() -it joins two or more arrays and copy of joint array
+ copyWithin()  -copys array elements within the arrayv from specififed index no
+every()  -it varifiys every elements and test wether it passed given condition
+indexof()  --it returns the index no of spcified elements if not found then it retuens -1;
+join   -it joins all elements in an array by using delemiter
+sort()  -it sorts the elements of an array
+reverse()   -it returns the array elemnts in the reverse order
+pop()    it removes he last element and returns the element 
+push()  -it adds new element to the end of array
+shift it removies 1st elemnt of array
+unshift it adds a new element toword the starting postion oof array
+slice()  -it select a part of array and returns new array
+toString()  -it returns the elements of array in string form
+
+
+
+stntax:-
+var names=["A",10,true]; //array type
+var name=new Array("A",10,true)  /constuctor
+var names[0]="A";
+names[1]=10;
+names[2]=true;
+
+
+
+ 
+ -->           
+            
+
+</body>
+</html>
