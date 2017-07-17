@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<script>
+function call(event){
+ var x = event.clientX;
+    var y = event.clientY;
+    var coords = "X coords: " + x + ", Y coords: " + y;
+    document.getElementById("demo1").innerHTML = coords;
+if(event.clientX>400 &&event.clientX<654 &&event.clientY>75 &&event.clientY<198){
+ document.getElementById("state").innerHTML = "Red";
+}else if(event.clientX>660 &&event.clientX<965 &&event.clientY>75 &&event.clientY<198){
+document.getElementById("state").innerHTML = "Yellow";
+}else if(event.clientX>400 &&event.clientX<654 &&event.clientY>200 &&event.clientY<320){
+document.getElementById("state").innerHTML = "Green";
+}else if(event.clientX>660 &&event.clientX<965 &&event.clientY>200 &&event.clientY<320){
+document.getElementById("state").innerHTML = "Blue";
+}else{
+document.getElementById("state").innerHTML = "white";
+}
+
+}
+</script>
+
+<div align="center">
+<h2>Mouse move event</h2>
+<img src='img.png' onmousemove="call(event)">
+<p id="demo1"></p>
+<p id="state"></p>
+</div>
+</body>
+</html>

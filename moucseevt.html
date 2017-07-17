@@ -1,0 +1,49 @@
+<html> 
+<head> 
+<title>JavaScript Date constructor Property</title> 
+<script type="text/javascript"> 
+function over(){
+document.getElementById('pic').src='2.png';
+}
+function out(){
+document.getElementById('pic').src='1.png';
+}   
+  function down(){
+  document.getElementById('pic').src='3.png';
+  } 
+  function up(){
+  document.getElementById('pic').src='4.png';
+  
+  }
+  function move(){
+  document.getElementById('pic2').src='3.png';
+  
+  }   
+  function leave(){
+  document.getElementById('pic2').src='2.png';
+  
+  }    
+   
+   </script> 
+</head> 
+<body>
+<div align="center"><h2>Mouse handling events</h2>
+<img id="pic" src="1.png" onmouseover="over()" onmouseout="out()" onmousedown="down()" onmouseup="up()" onmousemove="move()" onmouseleave="leave()">
+<img id="pic2" src="1.png"  onmousemove="move()" onmouseleave="leave()"> 
+</div>
+
+<!-- 
+mouse events in used to perform various functionaltys related to mouse actions
+they are 
+
+
+onmouseover()
+onmouseout()
+onmousedown()
+onmouseup()
+
+
+
+-->
+</body> 
+</html> 

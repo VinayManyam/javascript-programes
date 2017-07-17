@@ -1,0 +1,71 @@
+<html> 
+<head> 
+<title>JavaScript Date constructor Property</title> 
+<script type="text/javascript"> 
+function load(){
+pics=['1.png','2.png','3.png','4.png'];
+img=document.getElementById('img');
+for(var i=0;i<pics.length;i++)
+{
+var im=new Image();
+im.src=pics[i];
+im.width='200';
+im.height='300';
+img.appendChild(im);
+}
+}
+
+function getpos(){
+alert(event.clientX);
+document.getElementById('img2').innerHTML="X="+event.clientX+"y="+event.clientY;
+
+}
+
+   </script> 
+   
+  <style>
+  #gallery img{
+  width:200px;
+  height:200px;
+  -webkit-transition-duration:0.6;
+  opacity:0.6;
+  z-index:1;
+  margin:0;
+  postion:relative;
+  }
+  #galary img:hover{
+  -webkit-transition:scale(1.5);
+  box-shadow:0px 0px 25px gray;
+  -webkit-box-shadow:0px 0px 25px gray;
+  opacity:1;
+  z-index:10;
+  }
+  
+  </style>
+</head> 
+<body onload="load()">
+<marquee onmouseover="this.stop()" onmouseout="this.start()" id="galary">
+<div align="center" id="img"><h2>Mouse handling events</h2>
+</marquee>
+<div align="center">
+<img src="1.png" width="200" height="200" id="img2" onmousemove="getpos(event)">
+</div>
+
+
+<!-- 
+mouse events in used to perform various functionaltys related to mouse actions
+they are 
+
+
+onmouseover()
+onmouseout()
+onmousedown()
+onmouseup()
+onmouseover()
+onmouseleave();
+
+
+
+-->
+</body> 
+</html> 
